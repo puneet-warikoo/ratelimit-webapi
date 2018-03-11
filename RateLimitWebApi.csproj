@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>net45</TargetFramework>
     <AssemblyName>WebApi.RateLimits</AssemblyName>
     <RootNamespace>WebApi.RateLimits</RootNamespace>
   </PropertyGroup>
@@ -13,6 +13,10 @@
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="11.0.1" />
     <PackageReference Include="System.Net.Http" Version="4.3.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="System.Runtime.Caching" />
   </ItemGroup>
 
 </Project>

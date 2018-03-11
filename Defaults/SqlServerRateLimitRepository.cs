@@ -1,11 +1,17 @@
 ﻿using WebApi.RateLimits.Interfaces;
 using WebApi.RateLimits.Models;
 using System;
+using WebApi.RateLimits.Defaults.Configuration;
 
 namespace WebApi.RateLimits.Defaults
 {
     class SqlServerRateLimitRepository : IRateLimitRepository
     {
+        private SqlServerConfiguration _sqlconfig;
+        public SqlServerRateLimitRepository(SqlServerConfiguration configuration)
+        {
+            _sqlconfig = configuration;
+        }
         public void Clear()
         {
             throw new NotImplementedException();

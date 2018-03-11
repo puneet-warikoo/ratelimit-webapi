@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27130.2036
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RateLimitWebApi", "RateLimitWebApi.csproj", "{B1ED4306-3DB7-4977-9D14-1D0230854893}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ratelimitapi", "..\ratelimitapi\ratelimitapi.csproj", "{C89CB768-4DBA-46B3-8AD9-4908A2B88B38}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{B1ED4306-3DB7-4977-9D14-1D0230854893}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B1ED4306-3DB7-4977-9D14-1D0230854893}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B1ED4306-3DB7-4977-9D14-1D0230854893}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C89CB768-4DBA-46B3-8AD9-4908A2B88B38}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C89CB768-4DBA-46B3-8AD9-4908A2B88B38}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C89CB768-4DBA-46B3-8AD9-4908A2B88B38}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C89CB768-4DBA-46B3-8AD9-4908A2B88B38}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
