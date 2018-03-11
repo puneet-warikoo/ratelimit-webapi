@@ -3,3 +3,7 @@
 ################################################################################
 
 /.vs/RateLimitWebApi/v15
+/RateLimitWebApi/obj/*
+/RateLimitWebApi/bin/*
+/RateLimitWebApi/bin
+/RateLimitWebApi/obj
