@@ -34,7 +34,7 @@ namespace WebApi.RateLimits.Defaults
             {
                 if (requestMessage.Headers.Contains(header))
                 {
-                    builder.Append(header).Append("->").Append(string.Join("$", requestMessage.Headers.GetValues(header));
+                    builder.Append(header).Append("->").Append(string.Join("$", requestMessage.Headers.GetValues(header)));
                     builder.Append("<->");
                 }
                 else
