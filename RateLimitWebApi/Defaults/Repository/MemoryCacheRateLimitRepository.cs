@@ -14,6 +14,7 @@ namespace WebApi.RateLimits.Defaults
         public MemoryCacheRateLimitRepository()
         {
             _cache = MemoryCache.Default;
+            _cachekeys = new List<string>();
 
         }
         public void Clear()
