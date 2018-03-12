@@ -8,6 +8,9 @@ namespace WebApi.RateLimits.Interfaces
 {
     public interface IRateLimitRuleRepository
     {
-        IRateLimitRuleConfig GetRuleConfig(string ruleIdentifier);
+        IRateLimitRuleConfig GetRule(string ruleIdentifier);
+        void SetRule(string ruleIdentifier, IRateLimitRuleConfig config);
+        bool Has(string ruleIdentifier);
+        bool Validate();
     }
 }

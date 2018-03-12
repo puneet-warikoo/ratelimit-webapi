@@ -70,6 +70,7 @@
   <ItemGroup>
     <Compile Include="Defaults\Configurations\SqlServerConfiguration.cs" />
     <Compile Include="Defaults\Identifier\ClientCertificateRequestIdentifier.cs" />
+    <Compile Include="Defaults\Repository\Rule\MemoryCacheRateLimitRuleRepository.cs" />
     <Compile Include="Exceptions\HeaderNotFoundException.cs" />
     <Compile Include="Defaults\Identifier\IPAddressIdentifier.cs" />
     <Compile Include="Defaults\Rule\IPAddressRateLimitRule.cs" />

@@ -9,8 +9,9 @@ namespace WebApi.RateLimits.Defaults
 
     class MemoryCacheRateLimitRepository : IRateLimitRepository
     {
-        ObjectCache _cache;
-        List<string> _cachekeys;
+        private ObjectCache _cache;
+        private List<string> _cachekeys;
+        const string CACHE_IDENTIFIER = "Rate-";
         public MemoryCacheRateLimitRepository()
         {
             _cache = MemoryCache.Default;
@@ -26,39 +27,39 @@ namespace WebApi.RateLimits.Defaults
 
         public RateLimit Get(string identifier)
         {
-            if (this.Has(identifier))
-                return (RateLimit)_cache[identifier];
-            if (_cachekeys.Contains(identifier))
+            if (this.Has(CACHE_IDENTIFIER + identifier))
+                return (RateLimit)_cache[CACHE_IDENTIFIER + identifier];
+            if (_cachekeys.Contains(CACHE_IDENTIFIER + identifier))
             {
-                _cachekeys.Remove(identifier);
+                _cachekeys.Remove(CACHE_IDENTIFIER + identifier);
             }
             return null;
         }
 
         public bool Has(string identifier)
         {
-            return _cache.Contains(identifier);
+            return _cache.Contains(CACHE_IDENTIFIER + identifier);
         }
 
         public void Set(string identifier, RateLimit rate, long? expiry)
         {
-            if (this.Has(identifier))
+            if (this.Has(CACHE_IDENTIFIER + identifier))
             {
                 if (expiry == null)
-                    _cache.Set(identifier, rate, new CacheItemPolicy());
+                    _cache.Set(CACHE_IDENTIFIER + identifier, rate, new CacheItemPolicy());
                 else
-                    _cache.Set(identifier, rate, new CacheItemPolicy() { AbsoluteExpiration = new DateTimeOffset(Convert.ToInt64(expiry), new TimeSpan(0)) });
+                    _cache.Set(CACHE_IDENTIFIER + identifier, rate, new CacheItemPolicy() { AbsoluteExpiration = new DateTimeOffset(Convert.ToInt64(expiry), new TimeSpan(0)) });
             }
             else
             {
                 if (expiry == null)
-                    _cache.Add(identifier, rate, new CacheItemPolicy());
+                    _cache.Add(CACHE_IDENTIFIER + identifier, rate, new CacheItemPolicy());
                 else
-                    _cache.Add(identifier, rate, new CacheItemPolicy() { AbsoluteExpiration = new DateTimeOffset(Convert.ToInt64(expiry), new TimeSpan(0)) });
+                    _cache.Add(CACHE_IDENTIFIER + identifier, rate, new CacheItemPolicy() { AbsoluteExpiration = new DateTimeOffset(Convert.ToInt64(expiry), new TimeSpan(0)) });
             }
-            if (!_cachekeys.Contains(identifier))
+            if (!_cachekeys.Contains(CACHE_IDENTIFIER + identifier))
             {
-                _cachekeys.Add(identifier);
+                _cachekeys.Add(CACHE_IDENTIFIER + identifier);
             }
         }
 
