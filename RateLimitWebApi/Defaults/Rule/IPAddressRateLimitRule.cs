@@ -8,13 +8,14 @@ namespace RateLimitWebApi.Defaults
     {
         public IRateLimitRequestIdentifier Identifier { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public IRateLimitRepository Repository { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public IRateLimitRuleRepository RuleRepository { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
         public bool IsAllowed(HttpRequestMessage request, IRateLimitRequestIdentifier requestident, IRateLimitRepository repository)
         {
             throw new NotImplementedException();
         }
 
-        public bool IsAllowed(HttpRequestMessage request, IRateLimitRepository repository)
+        public bool IsAllowed(HttpRequestMessage request)
         {
             throw new NotImplementedException();
         }
@@ -24,7 +25,7 @@ namespace RateLimitWebApi.Defaults
             throw new NotImplementedException();
         }
 
-        public void UpdateRates(HttpRequestMessage request, IRateLimitRepository repository, HttpResponseMessage response)
+        public void UpdateRates(HttpRequestMessage request, HttpResponseMessage response)
         {
             throw new NotImplementedException();
         }

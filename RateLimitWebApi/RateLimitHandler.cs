@@ -25,7 +25,7 @@ namespace WebApi.RateLimits.Core
             foreach (var rule in this._rules)
             {
                 _applied.Add(rule);
-                if (rule != null && rule.IsAllowed(request, _repository))
+                if (rule != null && rule.IsAllowed(request))
                 {
                     continue;
                 }
@@ -42,7 +42,7 @@ namespace WebApi.RateLimits.Core
 
             foreach (var rule in _applied)
             {
-                rule.UpdateRates(request, _repository, response);
+                rule.UpdateRates(request, response);
                 rule.ProcessResponse(response);
             }
             return response;

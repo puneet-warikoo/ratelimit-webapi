@@ -6,8 +6,9 @@ namespace WebApi.RateLimits.Interfaces
     {
         IRateLimitRequestIdentifier Identifier { get; set; }
         IRateLimitRepository Repository { get; set; }
-        bool IsAllowed(HttpRequestMessage request, IRateLimitRepository repository);
-        void UpdateRates(HttpRequestMessage request, IRateLimitRepository repository, HttpResponseMessage response);
+        IRateLimitRuleRepository RuleRepository { get; set; }
+        bool IsAllowed(HttpRequestMessage request);
+        void UpdateRates(HttpRequestMessage request, HttpResponseMessage response);
         void ProcessResponse(HttpResponseMessage response);
     }
 }

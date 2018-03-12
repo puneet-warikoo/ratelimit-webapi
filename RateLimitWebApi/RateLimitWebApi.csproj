@@ -69,6 +69,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Defaults\Configurations\SqlServerConfiguration.cs" />
+    <Compile Include="Defaults\Identifier\ClientCertificateRequestIdentifier.cs" />
     <Compile Include="Exceptions\HeaderNotFoundException.cs" />
     <Compile Include="Defaults\Identifier\IPAddressIdentifier.cs" />
     <Compile Include="Defaults\Rule\IPAddressRateLimitRule.cs" />
@@ -79,6 +80,8 @@
     <Compile Include="Interfaces\IRateLimitRepository.cs" />
     <Compile Include="Interfaces\IRateLimitRequestIdentifier.cs" />
     <Compile Include="Interfaces\IRateLimitRule.cs" />
+    <Compile Include="Interfaces\IRateLimitRuleConfig.cs" />
+    <Compile Include="Interfaces\IRateLimitRuleRepository.cs" />
     <Compile Include="Models\RateLimit.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RateLimitHandler.cs" />
